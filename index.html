@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saveurs du Bénin - Restaurant Authentique</title>
+  <meta name="description" content="Découvrez les saveurs authentiques du Bénin dans notre restaurant traditionnel à Cotonou. Spécialités béninoises, pâte rouge, poulet bicyclette, ambiance chaleureuse.">
+  <meta name="keywords" content="restaurant béninois, cuisine traditionnelle, Cotonou, pâte rouge, poulet bicyclette, saveurs africaines">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; background: #fafafa; }
+    header { background: #14B8A6; color: #fff; text-align: center; padding: 3rem 1rem; }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin: 0; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+    nav { background: #0f766e; text-align: center; padding: 0.5rem; }
+    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: #fde68a; }
+
+    section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
+    h2 { color: #14B8A6; margin-bottom: 2rem; text-align: center; font-size: 2rem; }
+
+    /* MENU */
+    .menu-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .menu-item { background: #f0fdfa; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer; }
+    .menu-item:hover { transform: scale(1.05); }
+    .menu-item img { width: 100%; height: 200px; object-fit: cover; }
+    .menu-item-content { padding: 1rem; }
+    .menu-item-content strong { font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
+
+    /* FORM */
+    form input, form select, form textarea, form button {
+      width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 6px; border: 1px solid #ddd; font-family: inherit;
+    }
+    form button { background: #14B8A6; color: #fff; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+    form button:hover { background: #0f766e; }
+
+    /* CONTACT */
+    #contact p { text-align: center; margin: 0.5rem 0; font-size: 1rem; }
+
+    footer { background: #0f766e; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Saveurs du Bénin</h1>
+    <p>Restaurant authentique à Cotonou</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Réservation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- MENU -->
+  <section id="menu">
+    <h2>Notre Menu</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?african-food,tomato" alt="Pâte rouge">
+        <div class="menu-item-content">
+          <strong>Pâte rouge</strong>
+          Sauce tomate épicée, viande au choix
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?chicken,grill" alt="Poulet bicyclette">
+        <div class="menu-item-content">
+          <strong>Poulet bicyclette</strong>
+          Grillé au feu de bois, accompagné d’attiéké
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?corn,porridge" alt="Akassa">
+        <div class="menu-item-content">
+          <strong>Akassa</strong>
+          Pâte de maïs fermentée servie avec sauce
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://source.unsplash.com/400x300/?plantain,fried" alt="Alloco">
+        <div class="menu-item-content">
+          <strong>Alloco</strong>
+          Bananes plantain frites, piment
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section id="reservation">
+    <h2>Réserver une table</h2>
+    <form action="https://formsubmit.co/bodouinkakpo05@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="merci.html">
+
+      <input type="text" name="Nom" placeholder="Votre nom complet" required>
+      <input type="email" name="Email" placeholder="Votre email" required>
+      <input type="tel" name="Téléphone" placeholder="Votre numéro de téléphone" required>
+      <input type="date" name="Date" required>
+      <input type="time" name="Heure" required>
+      <select name="Personnes" required>
+        <option value="">Nombre de personnes</option>
+        <option value="1">1 personne</option>
+        <option value="2">2 personnes</option>
+        <option value="3">3 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="5+">5 personnes ou plus</option>
+      </select>
+      <textarea name="Message" rows="4" placeholder="Demande spéciale (facultatif)"></textarea>
+      <button type="submit">Envoyer la réservation</button>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact & Localisation</h2>
+    <p>📍 Cotonou, Bénin</p>
+    <p>📞 +229 90 00 00 00</p>
+    <p>✉️ contact@saveursdubenin.com</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Saveurs du Bénin. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
