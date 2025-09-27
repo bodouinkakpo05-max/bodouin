@@ -1,136 +1,303 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saveurs du Bénin - Restaurant Authentique</title>
-  <meta name="description" content="Découvrez les saveurs authentiques du Bénin dans notre restaurant traditionnel à Cotonou. Spécialités béninoises, pâte rouge, poulet bicyclette, ambiance chaleureuse.">
-  <meta name="keywords" content="restaurant béninois, cuisine traditionnelle, Cotonou, pâte rouge, poulet bicyclette, saveurs africaines">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notre Belle Histoire - Accueil</title>
   <style>
-    body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; background: #fafafa; }
-    header { background: #14B8A6; color: #fff; text-align: center; padding: 3rem 1rem; }
-    header h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin: 0; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; }
-    nav { background: #0f766e; text-align: center; padding: 0.5rem; }
-    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 600; transition: 0.3s; }
-    nav a:hover { color: #fde68a; }
-
-    section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
-    h2 { color: #14B8A6; margin-bottom: 2rem; text-align: center; font-size: 2rem; }
-
-    /* MENU */
-    .menu-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .menu-item { background: #f0fdfa; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer; }
-    .menu-item:hover { transform: scale(1.05); }
-    .menu-item img { width: 100%; height: 200px; object-fit: cover; }
-    .menu-item-content { padding: 1rem; }
-    .menu-item-content strong { font-size: 1.2rem; display: block; margin-bottom: 0.5rem; }
-
-    /* FORM */
-    form input, form select, form textarea, form button {
-      width: 100%; padding: 0.8rem; margin: 0.5rem 0; border-radius: 6px; border: 1px solid #ddd; font-family: inherit;
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #ffe4e6;
+      color: #4a235a;
+      overflow-x: hidden;
+      padding-top: 60px;
+      position: relative;
+      min-height: 100vh;
     }
-    form button { background: #14B8A6; color: #fff; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
-    form button:hover { background: #0f766e; }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #d6336c;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #841439;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .title {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: #d6336c;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(214,51,108,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      text-align: left;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(214,51,108,0.3);
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .cards .card {
+      flex: 1 1 320px;
+      max-width: 320px;
+    }
+    button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #841439;
+    }
 
-    /* CONTACT */
-    #contact p { text-align: center; margin: 0.5rem 0; font-size: 1rem; }
+    /* Cœurs animés */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      width: 25px;
+      height: 25px;
+      background-color: #d6336c;
+      clip-path: polygon(50% 0%, 84% 12%, 100% 38%, 90% 69%, 50% 100%, 10% 69%, 0 38%, 16% 12%);
+      opacity: 0.7;
+      animation-name: floatUp;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-duration: 10s;
+      animation-delay: 0s;
+    }
+    .heart:nth-child(2) {
+      left: 25%;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+    .heart:nth-child(3) {
+      left: 40%;
+      animation-duration: 8s;
+      animation-delay: 1s;
+    }
+    .heart:nth-child(4) {
+      left: 55%;
+      animation-duration: 11s;
+      animation-delay: 3s;
+    }
+    .heart:nth-child(5) {
+      left: 70%;
+      animation-duration: 9s;
+      animation-delay: 0.5s;
+    }
+    .heart:nth-child(6) {
+      left: 85%;
+      animation-duration: 13s;
+      animation-delay: 2.5s;
+    }
 
-    footer { background: #0f766e; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+    /* --- Styles du formulaire de connexion --- */
+    #loginForm {
+      max-width: 320px;
+      margin: 120px auto;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
+      text-align: center;
+      z-index: 200;
+      position: relative;
+    }
+    #loginForm h2 {
+      margin-bottom: 20px;
+      color: #d6336c;
+      font-weight: 700;
+    }
+    #loginForm input {
+      width: 90%;
+      padding: 10px;
+      margin: 12px 0;
+      border: 2px solid #d6336c;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    #loginForm input:focus {
+      border-color: #841439;
+    }
+    #loginForm button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+      width: 95%;
+    }
+    #loginForm button:hover {
+      background: #841439;
+    }
+
+    /* Cacher le contenu tant que pas connecté */
+    #content {
+      display: none;
+    }
   </style>
+
+  <script>
+    // IDENTIFIANT & MOT DE PASSE à modifier ici :
+    const IDENTIFIANT = "BODOUIN";
+    const MOT_DE_PASSE = "CAMBELLE";
+
+    // Fonction vérification login
+    function verifierConnexion(e) {
+      e.preventDefault();
+      const user = document.getElementById('user').value;
+      const pass = document.getElementById('pass').value;
+      if(user === IDENTIFIANT && pass === MOT_DE_PASSE) {
+        localStorage.setItem('accesAutorise', 'true');
+        afficherContenu();
+      } else {
+        alert('Identifiant ou mot de passe incorrect !');
+      }
+    }
+
+    // Affiche le contenu et cache le formulaire
+    function afficherContenu() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }
+
+    // Au chargement, vérifier si déjà connecté
+    window.onload = function() {
+      if(localStorage.getItem('accesAutorise') === 'true') {
+        afficherContenu();
+      }
+    }
+  </script>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Saveurs du Bénin</h1>
-    <p>Restaurant authentique à Cotonou</p>
-  </header>
+  <!-- Formulaire de connexion -->
+  <div id="loginForm">
+    <h2>Connexion privée</h2>
+    <form onsubmit="verifierConnexion(event)">
+      <input type="text" id="user" placeholder="Identifiant" autocomplete="off" required />
+      <input type="password" id="pass" placeholder="Mot de passe" autocomplete="off" required />
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#reservation">Réservation</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Contenu principal caché avant connexion -->
+  <div id="content">
 
-  <!-- MENU -->
-  <section id="menu">
-    <h2>Notre Menu</h2>
-    <div class="menu-container">
-      <div class="menu-item">
-        <img src="https://source.unsplash.com/400x300/?african-food,tomato" alt="Pâte rouge">
-        <div class="menu-item-content">
-          <strong>Pâte rouge</strong>
-          Sauce tomate épicée, viande au choix
-        </div>
+    <!-- Les cœurs animés -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="histoire.html">Notre Histoire</a>
+      <a href="galerie.html">Galerie de Souvenirs</a>
+      <a href="lettres.html">Lettres d'Amour</a>
+      <a href="playlist.html">Playlist Romantique</a>
+      <a href="evenements.html">Événements</a>
+      <a href="biographies.html">Biographies</a>
+    </nav>
+
+    <div class="container">
+      <h1 class="title">Notre Belle Histoire</h1>
+
+      <div class="card">
+        <h2>Bienvenue à Notre Page</h2>
+        <p>Cette page est dédiée à notre histoire d'amour, nos souvenirs, et nos rêves pour l'avenir.</p>
+        <button onclick="window.location.href='galerie.html'">Découvrir Nos Souvenirs</button>
       </div>
-      <div class="menu-item">
-        <img src="https://source.unsplash.com/400x300/?chicken,grill" alt="Poulet bicyclette">
-        <div class="menu-item-content">
-          <strong>Poulet bicyclette</strong>
-          Grillé au feu de bois, accompagné d’attiéké
+
+      <div class="cards">
+        <div class="card">
+          <h2>Notre Histoire</h2>
+          <p>Découvrez comment tout a commencé et nos moments mémorables.</p>
+          <button onclick="window.location.href='histoire.html'">Voir plus</button>
         </div>
-      </div>
-      <div class="menu-item">
-        <img src="https://source.unsplash.com/400x300/?corn,porridge" alt="Akassa">
-        <div class="menu-item-content">
-          <strong>Akassa</strong>
-          Pâte de maïs fermentée servie avec sauce
+
+        <div class="card">
+          <h2>Galerie de Souvenirs</h2>
+          <p>Quelques photos de nos moments préférés.</p>
+          <button onclick="window.location.href='galerie.html'">Voir plus</button>
         </div>
-      </div>
-      <div class="menu-item">
-        <img src="https://source.unsplash.com/400x300/?plantain,fried" alt="Alloco">
-        <div class="menu-item-content">
-          <strong>Alloco</strong>
-          Bananes plantain frites, piment
+
+        <div class="card">
+          <h2>Lettres d'Amour</h2>
+          <p>"Mon amour, chaque jour avec toi est une bénédiction..."</p>
+          <button onclick="window.location.href='lettres.html'">Lire plus</button>
+        </div>
+
+        <div class="card">
+          <h2>Playlist Romantique</h2>
+          <p>Nos chansons préférées à écouter ensemble.</p>
+          <button onclick="window.location.href='playlist.html'">Voir playlist complète</button>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- RESERVATION -->
-  <section id="reservation">
-    <h2>Réserver une table</h2>
-    <form action="https://formsubmit.co/bodouinkakpo05@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="merci.html">
+  </div>
 
-      <input type="text" name="Nom" placeholder="Votre nom complet" required>
-      <input type="email" name="Email" placeholder="Votre email" required>
-      <input type="tel" name="Téléphone" placeholder="Votre numéro de téléphone" required>
-      <input type="date" name="Date" required>
-      <input type="time" name="Heure" required>
-      <select name="Personnes" required>
-        <option value="">Nombre de personnes</option>
-        <option value="1">1 personne</option>
-        <option value="2">2 personnes</option>
-        <option value="3">3 personnes</option>
-        <option value="4">4 personnes</option>
-        <option value="5+">5 personnes ou plus</option>
-      </select>
-      <textarea name="Message" rows="4" placeholder="Demande spéciale (facultatif)"></textarea>
-      <button type="submit">Envoyer la réservation</button>
-    </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact & Localisation</h2>
-    <p>📍 Cotonou, Bénin</p>
-    <p>📞 +229 90 00 00 00</p>
-    <p>✉️ contact@saveursdubenin.com</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen loading="lazy"></iframe>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Saveurs du Bénin. Tous droits réservés.</p>
-  </footer>
 </body>
 </html>

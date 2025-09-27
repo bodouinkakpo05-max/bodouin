@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notre Belle Histoire - Événements Importants</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #ffe4e6;
+      color: #4a235a;
+      overflow-x: hidden;
+      padding-top: 60px;
+      min-height: 100vh;
+      position: relative;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #d6336c;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #841439;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(214,51,108,0.15);
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: #d6336c;
+    }
+    .event {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(214,51,108,0.1);
+      position: relative;
+      border-left: 6px solid #d6336c;
+    }
+    .event h2 {
+      margin: 0 0 10px 0;
+      color: #841439;
+    }
+    .event p {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Cœurs animés */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      width: 25px;
+      height: 25px;
+      background-color: #d6336c;
+      clip-path: polygon(50% 0%, 84% 12%, 100% 38%, 90% 69%, 50% 100%, 10% 69%, 0 38%, 16% 12%);
+      opacity: 0.7;
+      animation-name: floatUp;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-duration: 10s;
+      animation-delay: 0s;
+    }
+    .heart:nth-child(2) {
+      left: 25%;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+    .heart:nth-child(3) {
+      left: 40%;
+      animation-duration: 8s;
+      animation-delay: 1s;
+    }
+    .heart:nth-child(4) {
+      left: 55%;
+      animation-duration: 11s;
+      animation-delay: 3s;
+    }
+    .heart:nth-child(5) {
+      left: 70%;
+      animation-duration: 9s;
+      animation-delay: 0.5s;
+    }
+    .heart:nth-child(6) {
+      left: 85%;
+      animation-duration: 13s;
+      animation-delay: 2.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cœurs animés -->
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="galerie.html">Galerie de Souvenirs</a>
+    <a href="lettres.html">Lettres d'Amour</a>
+    <a href="playlist.html">Playlist Romantique</a>
+    <a href="evenements.html">Événements</a>
+    <a href="biographies.html">Biographies</a>
+  </nav>
+
+  <div class="container">
+    <h1>Événements Importants</h1>
+
+    <div class="event">
+      <h2>Notre première rencontre - 12 mars 2022</h2>
+      <p>Le jour où nos regards se sont croisés pour la première fois. Un moment magique qui a tout changé.</p>
+    </div>
+
+    <div class="event">
+      <h2>Notre premier voyage ensemble - août 2022</h2>
+      <p>Un séjour inoubliable où nous avons découvert de nouveaux horizons et renforcé notre amour.</p>
+    </div>
+
+    <div class="event">
+      <h2>Anniversaire d’un an - 12 mars 2023</h2>
+      <p>Une célébration pleine d’émotions, de surprises et de promesses pour l’avenir.</p>
+    </div>
+
+    <div class="event">
+      <h2>Déménagement ensemble - décembre 2023</h2>
+      <p>Le début d’une nouvelle étape de notre vie commune, avec beaucoup d’enthousiasme et d’espoir.</p>
+    </div>
+
+  </div>
+</body>
+</html>
